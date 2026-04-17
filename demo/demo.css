@@ -1,0 +1,124 @@
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 64px;
+}
+h1 {
+  font-size: 32px;
+  margin: 0 0 64px;
+  text-align: center;
+}
+h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+form {
+  padding: 24px;
+}
+body > div {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin: 8px;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 4px
+}
+.level-0 {
+  background-color: #5555FF;
+}
+.level-1 {
+  background-color: #55FF55;
+}
+.level-2 {
+  background-color: #FF5555;
+}
+.level-3 {
+  background-color: #FFFF55;
+}
+@keyframes check {
+  0% {
+    transform: rotateZ(-90deg) scale(.2);
+    opacity: .5;
+  }
+  50% {
+    transform: rotateZ(-25deg) scale(1.6);
+    opacity: 1;
+  }
+  75% {
+    transform: rotateZ(-25deg) scale(1.6);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(-45deg) scale(1);
+    opacity: 1;
+  }
+}
+span:before {
+  content: "";
+  display: block;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  width: 10px;
+  height: 5px;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  transform: rotateZ(-45deg) scale(.2);
+  opacity: 0;
+}
+span.checked:before {
+  animation: 'check' .5s linear 0s 1;
+  animation-fill-mode: forwards;
+}
+#garbageContainer {
+  background-color: #ddd;
+  min-height: 200px;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.button-wrapper:before {
+  content: "";
+  display: block;
+  border-top: 1px solid black;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  position: relative;
+}
+button:disabled {
+  background-color: #eee;
+}
+label {
+  font-size: 18px;
+  padding: 5px;
+}
+.field {
+  padding: 4px;
+}

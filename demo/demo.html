@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theseus- Demo</title>
+  <link rel="stylesheet" href="./demo.css"/>
+</head>
+<body>
+  <h1>
+    THESEUS - DEMO
+  </h1>
+
+  <h2>PARAMS</h2>
+
+  <form id="paramsForm">
+    <div class="field">
+      <input id="showRemovedElementChildren" type="checkbox" value="SHOW_REMOVED_ELEMENT_CHILDREN">
+      <label for="showRemovedElementChildren">Check children of removed elements</label>
+    </div>
+    <div class="field">
+      <input id="showRemovedChildren" type="checkbox" value="SHOW_REMOVED_CHILDREN">
+      <label for="showRemovedChildren">Check removed children of elements</label>
+    </div>
+  </form>
+
+  <hr/>
+
+
+  <h2>STATE</h2>
+  <div id="stateContainer">
+  </div>
+
+  <h2>GARBAGE</h2>
+  <div id="garbageContainer">
+  </div>
+
+  <template id="demoTpl">
+    <span id="0">
+      <span id="0-0"></span>
+      <span class="remove-self"></span>
+    </span>
+    <span id="1">
+      <span id="1-0"></span>
+    </span>
+    <span id="firstRemoved" class="remove-self"></span>
+    <span id="secondRemoved" class="remove-self">
+      <span id="secondRemoved_child">
+        <span id="thirdRemoved" class="remove-self">
+          <span id="thirdRemoved_child"></span>
+        </span>
+      </span>
+    </span>
+    <span id="2">
+      <span id="2-0">
+        <span id="fourthRemoved" class="remove-self"></span>
+      </span>
+    </span>
+    <span id="3">
+      <span id="3-1"></span>
+      <span id="3-0" class="move-backward"></span>
+      <span id="3-2"></span>
+      <span id="3-3"></span>
+      <span id="3-5" class="move-forward"></span>
+      <span id="3-4"></span>
+      <span id="3-6"></span>
+    </span>
+    <span id="4">
+      <span id="4-0" class="remove-children">
+        <span id="removedChild-1"></span>
+        <span id="removedChild-2"></span>
+        <span id="removedChild-3"></span>
+      </span>
+    </span>
+    <span id="5">
+      <span id="5-0"></span>
+      <span id="5-1"></span>
+      <span id="5-2">
+          <span id="5-2-1"></span>
+      </span>
+    </span>
+  </template>
+
+  <div class="button-wrapper">
+    <button id="runBt">RUN</button>
+    <button id="pauseBt" disabled>PAUSE</button>
+    <button id="initBt" disabled>INIT</button>
+  </div>
+
+  <script type="module" src="./demo.js"></script>
+</body>
+</html>
